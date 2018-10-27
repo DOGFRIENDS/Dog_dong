@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">test</string>
-    //메뉴바에 뜨는 제목
+    <string name="app_name">DOGFRIENDS</string>         //메뉴바에 뜨는 제목
+    <color name="introBg">#548687</color>               //인트로화면
+    <color name="bg">#C5E99B</color>                    //앱
 
     <string name="title_activity_auto_fullscreen">AutoFullscreenActivity</string>
     <string name="dummy_button">Dummy Button</string>
@@ -23,6 +24,5 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
-    <string name="title_activity_test">Sign in</string>
 
 </resources>

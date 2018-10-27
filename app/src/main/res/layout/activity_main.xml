@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg"
     tools:context=".MainActivity">
 
     <Button
@@ -11,10 +12,11 @@
         android:layout_width="100dp"
         android:layout_height="45dp"
         android:layout_marginTop="100dp"
+        android:background="@drawable/oval_border"
         android:text="연결하기"
         android:textAlignment="center"
         android:textAllCaps="false"
-        android:textColor="@android:color/holo_blue_dark"
+        android:textColor="#fff"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -26,10 +28,11 @@
         android:layout_width="100dp"
         android:layout_height="45dp"
         android:layout_marginTop="100dp"
+        android:background="@drawable/oval_border"
         android:text="로그인"
         android:textAlignment="center"
         android:textAllCaps="false"
-        android:textColor="@android:color/holo_blue_dark"
+        android:textColor="#fff"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/button5"
         app:layout_constraintHorizontal_bias="0.5"
@@ -38,10 +41,10 @@
 
     <Button
         android:id="@+id/button6"
-        android:layout_width="220dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="160dp"
-        android:background="@android:color/holo_green_dark"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="140dp"
+        android:background="@drawable/circle_border"
         android:text="PLAY"
         android:textAlignment="center"
         android:textColor="#fff"

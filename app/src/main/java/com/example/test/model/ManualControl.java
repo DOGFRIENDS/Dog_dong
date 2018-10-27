@@ -8,10 +8,6 @@ public class ManualControl {
         this.manual = manualControl;
     }
 
-    public int getManual() {
-        return manual;
-    }
-
     @Override
     public String toString() {
         return "ManualControl{" +

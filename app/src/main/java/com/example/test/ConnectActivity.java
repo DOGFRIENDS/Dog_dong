@@ -261,7 +261,7 @@ public class ConnectActivity extends AppCompatActivity implements View.OnClickLi
                                         public void run() {
                                             if(data.equals("FAIL")){
                                                 Toast.makeText(ConnectActivity.this, "연결실패! 다시 확인해주세요", Toast.LENGTH_SHORT).show();
-                                            } else{
+                                            } else {
                                                 Toast.makeText(ConnectActivity.this, "와이파이가 연결되었습니다.", Toast.LENGTH_SHORT).show();
 //                                                mEditReceive.setText(mEditReceive.getText().toString() + data+ mStrDelimiter);
 //                                                MyApplication app = (MyApplication)getApplication();

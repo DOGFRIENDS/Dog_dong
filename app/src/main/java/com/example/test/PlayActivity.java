@@ -18,8 +18,6 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
-import retrofit2.http.GET;
-import retrofit2.http.Query;
 
 import static com.example.test.BuildConfig.DEBUG;
 
@@ -55,6 +53,7 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn_down).setOnClickListener(this);
         findViewById(R.id.btn_left).setOnClickListener(this);
         findViewById(R.id.btn_right).setOnClickListener(this);
+        findViewById(R.id.btn_stop).setOnClickListener(this);
 
         btn_power = findViewById(R.id.btn_power);
         btn_power.setOnClickListener(this);
@@ -106,27 +105,31 @@ public class PlayActivity extends AppCompatActivity implements View.OnClickListe
            case R.id.btn_right:
                 sendManual(6);
                 break;
+
+           // 수동제어 정지
+            case R.id.btn_stop:
+                sendManual(0);
         }
     }
 
 
 /////////////////////////////////////// 서비스 인터페이스 //////////////////////////////////////
-
-    public interface ApiService {
-
-        // 온습도
-        @GET("view")
-        Call<TempHumi> getTempHumi();
-
-        // 자동제어 on/off
-        @GET("android/setpower/")
-        Call<Control> getAutoControl(@Query("power") int power);
-
-        // 수동제어 (전, 후, 좌, 우)
-        @GET("android/setmanual/")
-        Call<ManualControl> getManualControl(@Query("manual") int manual);
-
-    }
+//
+//    public interface ApiService {
+//
+//        // 온습도
+//        @GET("view")
+//        Call<TempHumi> getTempHumi();
+//
+//        // 자동제어 on/off
+//        @GET("android/setpower/")
+//        Call<Control> getAutoControl(@Query("power") int power);
+//
+//        // 수동제어 (전, 후, 좌, 우)
+//        @GET("android/setmanual/")
+//        Call<ManualControl> getManualControl(@Query("manual") int manual);
+//
+//    }
 
 ///////////////////////////////////////// 수동제어 /////////////////////////////////////////////
     public void sendManual(int i){

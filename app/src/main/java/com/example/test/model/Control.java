@@ -8,10 +8,6 @@ public class Control {
         this.power = control;
     }
 
-    public int getPower() {
-        return power;
-    }
-
     @Override
     public String toString() {
         return "Control{" +

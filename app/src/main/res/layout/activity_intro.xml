@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:background="@android:color/holo_green_dark"
+    android:background="@color/introBg"
     tools:context=".Intro">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="DOGFRIEND"
+        android:text="DOGFRIENDS"
         android:textColor="@android:color/background_light"
         android:textSize="36sp"
         android:textStyle="bold"

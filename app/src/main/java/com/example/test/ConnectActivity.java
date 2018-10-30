@@ -78,7 +78,7 @@ public class ConnectActivity extends AppCompatActivity implements View.OnClickLi
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         if(mBluetoothAdapter == null ) {  // 블루투스 미지원
             Toast.makeText(getApplicationContext(), "기기가 블루투스를 지원하지 않습니다.", Toast.LENGTH_LONG).show();
-            finish();  // 현재액티비티 종료
+            finish();  // 현재액티비티 종료 (main액티비티로 이동)
         }
         else { // 블루투스 지원
 
@@ -155,8 +155,8 @@ public class ConnectActivity extends AppCompatActivity implements View.OnClickLi
 
         AlertDialog.Builder oDialog = new AlertDialog.Builder(this, android.R.style.Theme_DeviceDefault_Light_Dialog);
 
-        oDialog.setTitle("DOGFRIENDS가 페어링 되어 있지 않습다.");
-        oDialog.setMessage("DOGFRIENDS의 전원을 켜고 블루투스 검색을 해주세요.");
+        oDialog.setTitle("알림");
+        oDialog.setMessage("DOGFRIENDS(아두이노)의 전원을 켜고 검색을 해주세요.");
         oDialog.setPositiveButton("취소", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                 Log.i("Dialog", "취소");
@@ -164,9 +164,9 @@ public class ConnectActivity extends AppCompatActivity implements View.OnClickLi
                 finish();
             }
         });
-        oDialog.setNeutralButton("블루투스 검색", new DialogInterface.OnClickListener() {
+        oDialog.setNeutralButton("검색", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
-                Log.i("Dialog", "블루투스 검색");
+                Log.i("Dialog", "검색");
                 startActivity(intentSearch);
             }
         });
@@ -209,7 +209,7 @@ public class ConnectActivity extends AppCompatActivity implements View.OnClickLi
         }
     }
 
-    //
+    //4.블루투스 사용 가능한 상태인지 확인
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
@@ -289,14 +289,14 @@ public class ConnectActivity extends AppCompatActivity implements View.OnClickLi
         mWorkerThread.start();
     }
 
+    //문자열 전
     void sendData(String msg) {
         msg += mStrDelimiter;  // 문자열 종료표시 (\n)
         try{
-
             mOutputStream.write(msg.getBytes());  // 문자열 전송.
+
         }catch(Exception e) {  // 문자열 전송 도중 오류가 발생한 경우
-            Toast.makeText(getApplicationContext(), "데이터 전송중 오류가 발생",
-                    Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "데이터 전송중 오류가 발생", Toast.LENGTH_LONG).show();
             finish();  // App 종료
         }
     }
@@ -312,35 +312,12 @@ public class ConnectActivity extends AppCompatActivity implements View.OnClickLi
         return selectedDevice;
     }
 
-
-
-
-
-
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu){
-//        getMenuInflater().inflate(R.menu.menu_main, menu);
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item){
-//        int id = item.getItemId();
-//
-//        if(id == R.id.action_settings){
-//            return true;
-//        }
-//
-//        return super.onOptionsItemSelected(item);
-//    }
-
+    //확인버튼 클릭시
     @Override
     public void onClick(View v){
         Toast.makeText(ConnectActivity.this, "연결성공이 될 때까지 끄지 말아주세요", Toast.LENGTH_SHORT).show();
         sendData(ssidInput.getText().toString());
         sendData(passInput.getText().toString());
-//        ssidInput.setText("");
-//        passInput.setText("");
     }
 
     @Override

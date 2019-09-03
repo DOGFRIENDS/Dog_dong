@@ -14,5 +14,7 @@
 
 
 ## 작동 영상
-👇👇👇 click image 👇👇👇
+👇👇👇 click image 👇👇👇  
+
+
 [![DOGFRIENDS Video](https://i9.ytimg.com/vi/Dhcbthk6N94/mq2.jpg?sqp=CPjht-sF&rs=AOn4CLBMMrHORLsnpNdsVFr5FIp7YHbQdA)](https://www.youtube.com/embed/Dhcbthk6N94)
